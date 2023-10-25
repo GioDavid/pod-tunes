@@ -1,23 +1,15 @@
-import React from 'react';
-import { configureStore } from '@reduxjs/toolkit';
-import { Provider } from 'react-redux';
-import iTunesReducer from './adapters/redux/itunesSlice';
-import ITunesSearch from './ui/components/iTunesSearch';
-import ITunesResults from './ui/components/iTunesResults';
+import React from "react";
 
-const store = configureStore({
-  reducer: {
-    itunes: iTunesReducer,
-  },
-});
-
-function App() {
+const iTunesBrowser = () => {
   return (
-    <Provider store={store}>
-      <div className="App bg-black">
-        <div className="w-[1512px] h-[982px] relative bg-neutral-950 bg-opacity-20">
+    <div className="w-[1512px] h-[982px] relative bg-neutral-950 bg-opacity-20">
       <div className="w-[842px] pl-5 pt-[30px] pb-5 left-[333px] top-0 absolute justify-start items-start gap-[15px] inline-flex">
-      <ITunesSearch />
+        <div className="grow shrink basis-0 h-[50px] pl-5 pr-[5px] bg-zinc-900 rounded-[15px] justify-start items-center gap-4 flex">
+          <div className="w-5 h-5 relative" />
+          <div className="text-white text-opacity-40 text-base font-normal font-['Quicksand']">
+            podcast
+          </div>
+        </div>
       </div>
       <div className="left-[343px] top-[194px] absolute flex-col justify-start items-start inline-flex">
         <div className="w-[832px] h-10 relative border-b border-white border-opacity-5">
@@ -35,8 +27,7 @@ function App() {
           </div>
           <div className="w-3.5 h-3.5 left-[773px] top-[1px] absolute" />
         </div>
-        <ITunesResults />
-        {/* <div className="pr-3.5 pt-3.5 pb-[19px] border-b border-white border-opacity-5 justify-start items-center inline-flex">
+        <div className="pr-3.5 pt-3.5 pb-[19px] border-b border-white border-opacity-5 justify-start items-center inline-flex">
           <div className="w-[818px] h-[47px] relative">
             <img
               className="w-[45px] h-[45px] left-[50px] top-[2px] absolute rounded-lg"
@@ -60,9 +51,9 @@ function App() {
               <div className="w-[15px] h-[15px] relative" />
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
-      {/* <div className="w-[1512px] h-[110px] left-0 top-[872px] absolute bg-zinc-900">
+      <div className="w-[1512px] h-[110px] left-0 top-[872px] absolute bg-zinc-900">
         <img
           className="w-[110px] h-[110px] left-0 top-0 absolute"
           src="https://via.placeholder.com/110x110"
@@ -105,8 +96,8 @@ function App() {
             <div className="w-[85px] h-[5px] left-0 top-0 absolute bg-white rounded-[10px]" />
           </div>
         </div>
-      </div> */}
-      {/* <div className="w-[832px] pl-[705px] py-2.5 left-[343px] top-[114px] absolute justify-end items-center inline-flex">
+      </div>
+      <div className="w-[832px] pl-[705px] py-2.5 left-[343px] top-[114px] absolute justify-end items-center inline-flex">
         <div className="self-stretch justify-start items-center gap-5 inline-flex">
           <div className="w-4 h-4 relative" />
           <div className="w-[91px] rounded-[15px] justify-start items-center gap-1.5 flex">
@@ -116,11 +107,9 @@ function App() {
             <div className="w-[18px] h-[18px] relative" />
           </div>
         </div>
-      </div> */}
-    </div>
       </div>
-    </Provider>
+    </div>
   );
 }
 
-export default App;
+export default iTunesBrowser;
