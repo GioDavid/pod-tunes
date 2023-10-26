@@ -1,57 +1,43 @@
 import React from 'react';
-import { Paper, Avatar, Typography, Box } from '@mui/material';
+import { Avatar, Typography } from '@mui/material';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
-function Podcast({name}) {
+function Podcast({artistName, name, image, collectionName, releaseDate}) {
   return (
-    <Paper
-      className="w-[832px] h-20 pr-3.5 pt-3.5 pb-19 border-b border-white border-opacity-5 flex justify-start items-center"
+    <div
+      className="w-full h-20 pr-3.5 pt-3.5 pb-19 !border-b !border-white/[0.03] border-opacity-5 flex justify-start items-center !bg-black gap-8"
     >
-      <Box
-        className="w-[818px] h-[47px] relative"
-      >
+        <div className='flex flex-1 gap-5 items-center'>
+        <PlayArrowIcon className='w-[30px] h-[30px] text-white' />
         <Avatar
-          className="w-45 h-45 left-50 top-2 absolute rounded-lg"
+          className="w-45 h-45 left-50 top-2  rounded-lg"
           alt="Profile Image"
-          src="https://via.placeholder.com/45x45"
+          src={image}
         />
-        <Box
-          className="w-173 h-38 left-115 top-5 absolute flex-col justify-start items-start"
-        >
-          <Typography
-            className="text-white text-base font-medium font-Quicksand"
+        <div>
+        <Typography
+            className="text-white text-base font-medium font-Quicksand truncate h-5 w-[200px]"
           >
            {name}
           </Typography>
           <Typography
-            className="text-white text-opacity-30 text-sm font-medium font-Quicksand"
+            className="text-white text-opacity-30 text-sm font-medium font-Quicksand truncate h-5 w-[200px]"
           >
-            Ken Adams
+            {artistName}
           </Typography>
-        </Box>
+        </div>
+        </div>
         <Typography
-          className="w-210 left-396 top-5 absolute text-white text-opacity-30 text-base font-medium font-Quicksand"
+          className="w-[210px] text-white text-opacity-30 text-base font-medium font-Quicksand truncate h-10 line-clamp-2"
         >
-          Discovering your true passion is an ...
+          {collectionName}
         </Typography>
         <Typography
-          className="left-726 top-0 absolute text-white text-opacity-30 text-base font-medium font-Quicksand"
+          className="text-white text-opacity-30 text-base font-medium font-Quicksand"
         >
-          an hour ago
+          {releaseDate}
         </Typography>
-        <Box
-          className="w-30 h-30 px-3.75 left-0 top-10 absolute rounded-71.25 justify-center items-center gap-7.5 inline-flex"
-        >
-          <Box
-            sx={{
-              width: '15px',
-              height: '15px',
-              position: 'relative',
-            }}
-            className="w-15 h-15 relative"
-          />
-        </Box>
-      </Box>
-    </Paper>
+    </div>
   );
 }
 
